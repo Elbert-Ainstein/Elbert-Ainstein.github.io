@@ -32,6 +32,8 @@ export default function RootLayout({
         left: `${posX}px`,
         top: `${posY}px`
       }, {duration: 500, fill: "forwards"});
+
+
       
     });
 
@@ -47,7 +49,9 @@ export default function RootLayout({
       */}
       <head />
       <body className="opacity-100 relative">
-        <div className="cursor-dot" data-cursor-dot></div>
+        <div className="cursor-dot" data-cursor-dot>
+          <i id="trailer-icon" className="fa-solid fa-arrow-up-right"></i>
+        </div>
         <div className="cursor-outline" data-cursor-outline></div>
         <Nav/>
         {children}

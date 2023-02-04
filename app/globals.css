@@ -4,25 +4,26 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:wght@400;500;600;700&display=swap');
 
+.navbar {
+  z-index: 10;
+}
 
 #menu {
   height: 100vh;
   width: 100vw;
   display: flex;
   align-items: center;
-  opacity: 100;
   position:absolute;
   top: 0;
   left: 0;
-}
-.navBar {
-  z-index: 3;
+  cursor: none;
 }
 
 #menu-items {
   margin-left: clamp(4rem, 20vw, 48rem);
   position: relative;
   z-index: 1;
+  cursor: none;
 }
 
 #menu-items:hover > .menu-item {
@@ -41,8 +42,8 @@
   display: block;
   text-decoration: none;
   padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
-  cursor: none;
   transition: opacity 400ms ease;
+  cursor: none;
 }
 
 #menu-bg-pattern {
@@ -50,7 +51,7 @@
   width: 100vw;
 
   background-image: radial-gradient(
-    rgba(255,255, 255, 0.1) 9%,
+    rgba(255,255, 255, 0.25) 9%,
     transparent 9%
   );
   background-position: 0%, 0%;
@@ -72,7 +73,7 @@
   background-size: 110vmax;
   height: 100%;
   left: 0px;  
-  opacity: 0.15;
+  opacity: 0.3;
   position: absolute;
   top: 0px;
   transition: opacity 800ms ease,
@@ -88,7 +89,7 @@
 }
 #menu-items:hover ~ #menu-background-image {
   background-size: 100vmax;
-  opacity: 0.1;
+  opacity: 0.3;
 }
 
 #menu[data-active-index="0"] > #menu-bg-pattern {
@@ -239,6 +240,6 @@ a {
   left: 0;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  z-index: 1;
+  z-index: 10000000;
   pointer-events: none;
 }
