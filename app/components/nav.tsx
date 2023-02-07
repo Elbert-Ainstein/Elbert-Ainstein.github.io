@@ -1,12 +1,12 @@
 "use client"
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import "../globals.css"
 import { FiArrowUpRight } from "react-icons/fi";
 
 export default function Nav() {
-    const [state, setState] = useState<number>(1);
+    const [state, setState] = useState(false);
 
     useEffect(() => {
         const menu = document.getElementById("menu");
@@ -17,44 +17,67 @@ export default function Nav() {
                 menu.dataset.activeIndex = index;
             }
         });
-
-        // if (state == 0) {
-        //     menu.style.top="-200%";
-        // }
-
-        // if (state == 1) {
-        //     menu.style.top="0";
-        // }
+        
 
     }, []);
 
+    const nav = useRef();
+    const navPattern = useRef();
+    const openNav = () => {
+        nav.current.style.transform = "none";
+        nav.current.style.transition="opacity 800ms ease-in-out";
+        nav.current.style.opacity="1";
+        setState(true);
+    }
+    const closeNav = () => {
+        nav.current.style.transform = "translateY(-100%)";
+        nav.current.style.transition= "transform 800ms ease-in, opacity 500ms ease-in-out";
+        nav.current.style.opacity="0";
+
+        setState(false);
+    }
+
     return (
-        <div className="nav">
-            {/* <div className={` ${state == 0 ? "z-10" : "z-100000"} flex justify-between p-16 absolute border top-0 left-0 w-full navbar h-32 bg-black/0 text-white`} >
-                <p className="">
-                    Elbert Ainstein
-                </p>
-                {
-                    state == 0 ? <p onClick={(ev) => setState(1)}>
-                        menu
-                    </p> : <p onClick={(ev) => setState(1)}>
-                        close
+        <>
+            <div className="nav">
+                <Link href="/" className="btn btn-ghost z-10 absolute left-0 pl-24 pt-20 ">
+                    <p className="text-white">
+                        Elbert Ainstein
                     </p>
-                }
-            </div> */}
-            { state == 1 ? 
-            <div id="menu"  >
-                <div id="menu-items">
-                    <Link href="/" data-type="link" className=" interactable menu-item">Home</Link>
-                    <Link href="/" data-type="link" className=" interactable menu-item">Works</Link>
-                    <Link href="/" data-type="link" className=" interactable menu-item">About</Link>
-                    <Link href="/" data-type="link" className=" interactable menu-item">Contact me</Link>
+                </Link>
+                <div className="z-10 w-20 absolute top-0 right-0 mr-24 pt-16 text-white">
+                    {
+                        state == false ? <p 
+                        onClick={
+                            openNav
+                        }
+                        // onClick={(ev) => setState(true)} 
+                        className=" btn z-10 btn-ghost ">
+                            menu
+                        </p> : <p 
+                        // onClick={(ev) => setState(false)}
+                        onClick={closeNav} 
+                        className=" btn btn-ghost z-10">
+                            close
+                        </p>
+                    }
                 </div>
-                <div id="menu-bg-pattern"></div>
-                <div id="menu-background-image"></div>
-            </div> : null
-            }
-            
-        </div>
+        
+                {/* { state == 1 ?  */}
+                    <div id="menu" className={`-top-full ${state == true ? "delay-200" : null}`} ref={nav}>
+                        <div id="menu-items" className="font-poppins">
+                            <Link href="/" data-type="link" className=" interactable menu-item font-poppins">Home</Link>
+                            <Link href="/" data-type="link" className=" interactable menu-item font-nova">Works</Link>
+                            <Link href="/" data-type="link" className=" interactable menu-item">About</Link>
+                            <Link href="/" data-type="link" className=" interactable menu-item">Contact me</Link>
+                        </div>
+                        <div id="menu-bg-pattern" ref={navPattern}></div>
+                        <div id="menu-background-image"></div>
+                    </div> 
+                    {/* : null */}
+                {/* } */}
+                
+            </div>
+        </>
     )
 }

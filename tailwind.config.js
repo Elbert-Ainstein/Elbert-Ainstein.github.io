@@ -6,7 +6,12 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'nova': ['Ibarra Real Nova', 'serif'],
+        'poppins': ['Poppins', 'sans-serif'],
+      }
+    },
   },
   plugins: [require("daisyui")],
 }

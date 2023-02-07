@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
 
 .navbar {
   z-index: 10;
@@ -13,15 +15,29 @@
   width: 100vw;
   display: flex;
   align-items: center;
-  position:absolute;
+  position: absolute;
   top: 0;
   left: 0;
   cursor: none;
+  opacity: 0;
+  transition-delay: 3s;
+
+  transition: opacity 800ms ease-in-out,
+  background-size 800ms ease,
+    background-position 800ms ease;
+}
+
+#menu-btn {
+  position: absolute; 
+  top: 0;
+  right: 0;
+  z-index: 10;
 }
 
 #menu-items {
   margin-left: clamp(4rem, 20vw, 48rem);
   position: relative;
+
   z-index: 1;
   cursor: none;
 }
