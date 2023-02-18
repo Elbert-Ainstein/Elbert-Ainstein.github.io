@@ -22,9 +22,7 @@
   opacity: 0;
   transition-delay: 3s;
 
-  transition: opacity 800ms ease-in-out,
-  background-size 800ms ease,
-    background-position 800ms ease;
+  animation-delay: 2.1s, 480ms;
 }
 
 #menu-btn {
