@@ -41,7 +41,6 @@ const Hero = () => {
             }}
             // className="w-3 h-3 rounded-full bg-secondary mb-1"
             >
-              {/* <img src={AiOutlineArrowDown} className="w-3 h-3 bg-secondary mb-1" /> */}
               <FaArrowDown className="w-5 h-5 mb-2 " />
             </motion.dev>
           </div>
