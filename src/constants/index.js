@@ -3,6 +3,7 @@ import {
     backend,
     creator,
     web,
+    Caff,
     javascript,
     typescript,
     html,
@@ -17,7 +18,6 @@ import {
     docker,
     chain,
     velo,
-    carrent,
     jobit,
     tripguide,
     pytorch,
@@ -165,10 +165,9 @@ import {
       iconBg: "#E6DEDD",
       date: "Dec 2022 - Present",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        "Made the Micrograd and nanoGPT based of Andrej's Video",
+        "Improved a bit on GPT-2 to make myself an 'AI Assistant'",
+        "More in progress!"
       ],
     },
   ];
@@ -202,9 +201,9 @@ import {
   
   const projects = [
     {
-      name: "Car Rent",
+      name: "Caffinated",
       description:
-        "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+        "Web-based platform that allows users to manage, watch, and upload exclusive content to share with friends and followers. A bit like patreon but a lot more personal.",
       tags: [
         {
           name: "react",
@@ -219,7 +218,7 @@ import {
           color: "pink-text-gradient",
         },
       ],
-      image: carrent,
+      image: Caff,
       srcLink: "https://github.com/",
     },
     {

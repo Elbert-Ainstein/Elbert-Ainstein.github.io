@@ -25,6 +25,7 @@ import aurora from './company/aurora.png';
 import velo from './company/velo.png';
 import chain from './company/chain.png';
 import pytorch from './company/pytorch.png';
+import Caff from './company/Caff.png';
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
@@ -35,6 +36,7 @@ export {
   aurora,
   backend,
   creator,
+  Caff,
   mobile,
   pytorch,
   chain,
