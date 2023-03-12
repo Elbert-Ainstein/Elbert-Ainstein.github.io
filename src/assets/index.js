@@ -21,10 +21,10 @@ import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 
-import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
-import tesla from "./company/tesla.png";
+import aurora from './company/aurora.png';
+import velo from './company/velo.png';
+import chain from './company/chain.png';
+import pytorch from './company/pytorch.png';
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
@@ -32,9 +32,13 @@ import tripguide from "./tripguide.png";
 
 export {
   logo,
+  aurora,
   backend,
   creator,
   mobile,
+  pytorch,
+  chain,
+  velo,
   web,
   github,
   menu,
@@ -52,10 +56,6 @@ export {
   tailwind,
   typescript,
   threejs,
-  meta,
-  shopify,
-  starbucks,
-  tesla,
   carrent,
   jobit,
   tripguide,

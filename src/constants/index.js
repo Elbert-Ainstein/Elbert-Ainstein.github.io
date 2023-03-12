@@ -15,14 +15,14 @@ import {
     git,
     figma,
     docker,
-    meta,
-    starbucks,
-    tesla,
-    shopify,
+    chain,
+    velo,
     carrent,
     jobit,
     tripguide,
+    pytorch,
     threejs,
+    aurora,
   } from "../assets";
   
   export const navLinks = [
@@ -112,15 +112,19 @@ import {
       name: "docker",
       icon: docker,
     },
+    {
+      name: "pytorch",
+      icon: pytorch,
+    }
   ];
   
   const experiences = [
     {
       title: "React.js Developer",
-      company_name: "Starbucks",
-      icon: starbucks,
-      iconBg: "#383E56",
-      date: "March 2020 - April 2021",
+      company_name: "Aurora Client",
+      icon: aurora,
+      iconBg: "#1C1B1B",
+      date: "October 2020 - April 2021",
       points: [
         "Developing and maintaining web applications using React.js and other related technologies.",
         "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
@@ -129,10 +133,10 @@ import {
       ],
     },
     {
-      title: "React Native Developer",
-      company_name: "Tesla",
-      icon: tesla,
-      iconBg: "#E6DEDD",
+      title: "React.js Developer",
+      company_name: "Chainchange",
+      icon: chain,
+      iconBg: "#191A1B",
       date: "Jan 2021 - Feb 2022",
       points: [
         "Developing and maintaining web applications using React.js and other related technologies.",
@@ -142,10 +146,10 @@ import {
       ],
     },
     {
-      title: "Web Developer",
-      company_name: "Shopify",
-      icon: shopify,
-      iconBg: "#383E56",
+      title: "Web & Web3 Developer",
+      company_name: "Velocityblue",
+      icon: velo,
+      iconBg: "#060A2E",
       date: "Jan 2022 - Jan 2023",
       points: [
         "Developing and maintaining web applications using React.js and other related technologies.",
@@ -155,11 +159,11 @@ import {
       ],
     },
     {
-      title: "Full stack Developer",
-      company_name: "Meta",
-      icon: meta,
+      title: "Developing & learning ML",
+      company_name: "Pytorch",
+      icon: pytorch,
       iconBg: "#E6DEDD",
-      date: "Jan 2023 - Present",
+      date: "Dec 2022 - Present",
       points: [
         "Developing and maintaining web applications using React.js and other related technologies.",
         "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
