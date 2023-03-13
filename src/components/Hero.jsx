@@ -5,8 +5,8 @@ import ComputersCanvas from './canvas/Computers.jsx'
 import { FaArrowDown } from 'react-icons/fa'
 
 const Hero = () => {
-  const originalName = "Elbert Ainstein"
-  const [name, setName] = useState("Elbert Ainstein")
+  const originalName = "Elbert"
+  const [name, setName] = useState("Elbert")
 
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ "
 
@@ -28,7 +28,7 @@ const Hero = () => {
 
       if (iterations >= originalName.length) stop(interval)
 
-      iterations += 1;
+      iterations += 1 / 2;
     }, 50);
     return () => clearInterval(interval);
   }, [])
