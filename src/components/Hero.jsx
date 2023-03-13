@@ -6,9 +6,11 @@ import { FaArrowDown } from 'react-icons/fa'
 
 const Hero = () => {
   const originalName = "Elbert Ainstein"
+  const originalGreet = "Hi, I'm"
   const [name, setName] = useState("Elbert Ainstein")
+  const [greet, setGreet] = useState("Hi, I'm")
 
-  const letters = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
+  const letters = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz'!-+"
 
   useEffect(() => {
     let iterations = 0
@@ -30,7 +32,28 @@ const Hero = () => {
 
       iterations += 1 / 2;
     }, 50);
-    return () => clearInterval(interval);
+
+    const nameInterval = setInterval(() => {
+      let tempGreet = greet
+      tempGreet = tempGreet.split("")
+      .map((letter, index) => {
+        if (index < iterations) {
+          return originalGreet[index];
+        }
+
+        return letters[Math.floor(Math.random() * letters.length)]
+      })
+      .join("")
+      setGreet(tempGreet)
+
+      if (iterations >= originalGreet.length) stop(nameInterval)
+
+      iterations += 1 / 2;
+    }, 100)
+
+    return () => {
+      clearInterval(interval);
+    }
   }, [])
 
   function stop(interval) {
@@ -49,7 +72,7 @@ const Hero = () => {
 
         <div >
           <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className="z-20 text-[#915eff]">{name}</span>
+            {greet} <span className="z-20 text-[#915eff]">{name}</span>
           </h1>
           <p className={`${styles.heroSubText}mt-2 text-white-100`}>
             I like to train Neural Networks,<br className='sm:block hidden'/> develop  websites, and play games
