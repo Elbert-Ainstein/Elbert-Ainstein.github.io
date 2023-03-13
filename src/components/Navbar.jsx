@@ -24,7 +24,7 @@ const Navbar = () => {
           <img src={logo} alt="logo" className="bg-white/10 w-9 h-9 object-contain" />
           <p className="text-white font-bold cursor-pointer flex text-[18px]">
             Elbert Ainstein &nbsp;
-            <span className="sm:block hidden">|&nbsp; Not even my real name</span>
+            <span className="sm:block hidden">|&nbsp; My online Name</span>
           </p>
         </Link>
         <ul className="list-none hidden sm:flex flex-row gap-10">

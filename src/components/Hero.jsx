@@ -1,10 +1,43 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { styles } from '../styles'
 import ComputersCanvas from './canvas/Computers.jsx'
 import { FaArrowDown } from 'react-icons/fa'
 
 const Hero = () => {
+  const originalName = "Elbert Ainstein"
+  const [name, setName] = useState("Elbert Ainstein")
+
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ "
+
+  useEffect(() => {
+    let iterations = 0
+
+    const interval = setInterval(() => {
+      let tempName = name
+      tempName = tempName.split("")
+      .map((letter, index) => {
+        if (index < iterations) {
+          return originalName[index];
+        }
+
+        return letters[Math.floor(Math.random() * 26)]
+      })
+      .join("")
+      setName(tempName)
+
+      if (iterations >= originalName.length) stop(interval)
+
+      iterations += 1;
+    }, 50);
+    return () => clearInterval(interval);
+  }, [])
+
+  function stop(interval) {
+    console.log('stop')
+    clearInterval(interval)
+  }
+
   return (
     <section className="w-full relative h-screen mx-auto">
       <div className={`${styles.paddingX} absolute inset-0 top-[120px] 
@@ -16,7 +49,7 @@ const Hero = () => {
 
         <div >
           <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className="text-[#915eff]">Elbert</span>
+            Hi, I'm <span className="z-20 text-[#915eff]">{name}</span>
           </h1>
           <p className={`${styles.heroSubText}mt-2 text-white-100`}>
             I like to train Neural Networks,<br className='sm:block hidden'/> develop  websites, and play games
@@ -30,7 +63,7 @@ const Hero = () => {
         <a href="#about">
           <div className="w-[36px] h-[64px] rounded-3xl border-4 
           border-secondary flex justify-center items-start p-2">
-            <motion.dev 
+            <motion.div 
             animate={{
               y: [0, 18, 0]
             }}
@@ -42,7 +75,7 @@ const Hero = () => {
             // className="w-3 h-3 rounded-full bg-secondary mb-1"
             >
               <FaArrowDown className="w-5 h-5 mb-2 " />
-            </motion.dev>
+            </motion.div>
           </div>
         </a>
       </div>
