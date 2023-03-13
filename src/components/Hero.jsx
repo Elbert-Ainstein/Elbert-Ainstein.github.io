@@ -5,8 +5,8 @@ import ComputersCanvas from './canvas/Computers.jsx'
 import { FaArrowDown } from 'react-icons/fa'
 
 const Hero = () => {
-  const originalName = "Elbert"
-  const [name, setName] = useState("Elbert")
+  const originalName = "Elbert Ainstein"
+  const [name, setName] = useState("Elbert Ainstein")
 
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ "
 
