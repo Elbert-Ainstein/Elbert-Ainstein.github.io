@@ -8,7 +8,7 @@ const Hero = () => {
   const originalName = "Elbert Ainstein"
   const [name, setName] = useState("Elbert Ainstein")
 
-  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ "
+  const letters = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
 
   useEffect(() => {
     let iterations = 0
@@ -21,7 +21,7 @@ const Hero = () => {
           return originalName[index];
         }
 
-        return letters[Math.floor(Math.random() * 26)]
+        return letters[Math.floor(Math.random() * letters.length)]
       })
       .join("")
       setName(tempName)
